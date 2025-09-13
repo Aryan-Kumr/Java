@@ -1,0 +1,15 @@
+public class Main
+{
+    static void change(int A[], int idx, int new_val) {
+        // this array is not the copy but point to the original array
+        A[idx] = new_val;
+    }
+    
+	public static void main(String[] args) {
+	    int X[] = {1, 2, 3, 4, 5};
+	    // objects and data types which are not primitive are passed as Reference
+	    // and primitive dataType(int, char, float, double) are passed as copy
+	    change(X, 2, 15);
+	    for(int x : X) System.out.println(x);
+	}
+}
