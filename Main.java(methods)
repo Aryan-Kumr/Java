@@ -1,0 +1,29 @@
+public class Main
+{
+    // without specifying static this method can't be called
+    static int max(int x, int y) {
+      // these are formal parameters and are copy of the orignal params
+        return (x > y ? x : y);
+    }
+    
+    int min(int x, int y) {
+        return (x > y ? y : x);
+    }
+    
+	public static void main(String[] args) {
+	    int a = 10, b = 15, c, d;
+	    // it we want to call the method w/o creating a object i have to make the
+	    // method above static as main method is static and the method(s) that i will
+	    // call have to be static as only static methods can call static methods 
+	    c = max(a, b);
+    // these are actual params
+		System.out.println(c);
+		
+		// another way to call a function a function from static main method is to
+		// create a object and call it.
+		
+		Main obj = new Main();
+		d = obj.min(a, b);
+		System.out.println(d);
+	}
+}
