@@ -1,0 +1,27 @@
+public class Main
+{
+    // variable arguments
+    // Note: ... is used to pass the varibale arguments and it should be on the last in the parameter showList
+    // dataType of the variable arguments should be same 
+    // elements can be accessed by a for loop(acts "similar" way as array)
+    static void showList(int start, String ...S) {
+        for(int i = 0; i < S.length; i++) {
+            System.out.println(start + ". " + S[i]);
+            start++;
+        }
+    }
+    
+    static void show(int ...A) {
+        for(int a : A) System.out.println(a);
+    }
+    
+	public static void main(String[] args) {
+	    showList(1, "John", "Smith", "Jiri", "Alex", "George");
+	    
+	    show(); // ... can take 0, 1, 2, ... arguments
+	    show(1);
+	    show(1, 2, 3);
+	    show(new int[] {10, 20, 30, 40, 50, 60}); // can also pass array of int in int ...A
+	    
+	}
+}
